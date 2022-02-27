@@ -24,7 +24,10 @@
     "/scripts/module.js"
   ],
   "scripts": [
-    "/scripts/lib/lib.js"
+    "/scripts/lib/SbConverter.js",
+    "/scripts/lib/ComputedProperties/ComputedProperty.js",
+    "/scripts/lib/ComputedProperties/PropertyStore.js",
+    "/scripts/lib/ComputedProperties/TotalHdProperty.js"
   ],
   "styles": [
     "/styles/module.css"
