@@ -3,6 +3,7 @@ import {ClassProperty} from './ClassProperty.js';
 import {HealthProperty} from './HealthProperty.js';
 import {HdSizeProperty} from './HdSizeProperty.js';
 import {ConHpBonusProperty} from './ConHpBonusProperty.js';
+import {FeatsProperty} from './FeatsProperty.js';
 
 export class PropertyStore {
     static ComputedProperties = {
@@ -11,6 +12,7 @@ export class PropertyStore {
         'hdSize': new HdSizeProperty(),
         'conHpBonus': new ConHpBonusProperty(),
         'class': new ClassProperty(),
+        'feats': new FeatsProperty(),
     };
 
     constructor(input) {
@@ -27,7 +29,7 @@ export class PropertyStore {
             return a[1].dependencyDepth - b[1].dependencyDepth;
         });
 
-        console.log(sortedProperties);
+        // console.log(sortedProperties);
 
         for (const sortedProperty of sortedProperties) {
             this.properties[sortedProperty[0]] = sortedProperty[1].getProperty();

@@ -18,6 +18,7 @@ Hooks.on('getActorSheetHeaderButtons', async (sheet, buttons) => {
             // Open Config window
             let sbConverter = new SbConverter(sheet.actor);
 
+            console.log(sheet.actor);
             //await sbConverter.getTemplate();
             sbConverter.template = await (await fetch('modules/Foundry-PF1-StatBlock-Exporter-Module/resources/templateCharacter.txt')).text();
 
