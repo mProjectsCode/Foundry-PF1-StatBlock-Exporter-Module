@@ -4,6 +4,7 @@ import {HealthProperty} from './HealthProperty.js';
 import {HdSizeProperty} from './HdSizeProperty.js';
 import {ConHpBonusProperty} from './ConHpBonusProperty.js';
 import {FeatsProperty} from './FeatsProperty.js';
+import {LanguagesProperty} from './LanguagesProperty.js';
 
 export class PropertyStore {
     static ComputedProperties = {
@@ -13,6 +14,7 @@ export class PropertyStore {
         'conHpBonus': new ConHpBonusProperty(),
         'class': new ClassProperty(),
         'feats': new FeatsProperty(),
+        'languages': new LanguagesProperty(),
     };
 
     constructor(input) {

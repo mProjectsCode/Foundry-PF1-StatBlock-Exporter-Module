@@ -19,4 +19,4 @@
 **Base Atk** {{ @rollData.attributes.bab.total }}; **CMB** {{ @rollData.attributes.cmb.total }}; **CMD** {{ @rollData.attributes.cmd.total }}
 **Feats** {{ #feats }}
 **Skills**
-**Languages**
+**Languages** {{ #languages }}
