@@ -15,22 +15,19 @@
     }
   ],
   "dependencies": [
-
   ],
   "conflicts": [
-    
   ],
   "esmodules": [
     "/scripts/module.js"
   ],
   "scripts": [
-    "/scripts/lib/SbConverter.js",
-    "/scripts/lib/ComputedProperties/ComputedProperty.js",
-    "/scripts/lib/ComputedProperties/PropertyStore.js",
-    "/scripts/lib/ComputedProperties/TotalHdProperty.js"
   ],
   "styles": [
     "/styles/module.css"
+  ],
+  "system": [
+    "pf1"
   ],
   "languages": [
     {
@@ -43,6 +40,5 @@
   "manifest": "https://raw.githubusercontent.com/mProjectsCode/Foundry-PF1-StatBlock-Exporter-Module/master/module.json",
   "download": "",
   "media": [
-
   ]
 }

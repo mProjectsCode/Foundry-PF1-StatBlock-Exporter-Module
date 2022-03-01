@@ -1,4 +1,4 @@
-import {ComputedProperty} from "./ComputedProperty.js";
+import {ComputedProperty} from './ComputedProperty.js';
 
 export class TotalHdProperty extends ComputedProperty {
 

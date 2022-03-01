@@ -4,7 +4,7 @@ export class SbConverter {
     constructor(actor) {
         this.actor = actor;
         this.template = '';
-        new PropertyStore(actor);
+        this.propertyStore = new PropertyStore(actor);
     }
 
     async getTemplate() {
@@ -14,7 +14,7 @@ export class SbConverter {
     convert() {
         // console.log(this.actor);
 
-        let output = this.template.replace(new RegExp('{{ .*? }}', 'g'), this.replaceTag.bind(this))
+        let output = this.template.replace(new RegExp('{{ .*? }}', 'g'), this.replaceTag.bind(this));
 
         console.log('SBE | output: \n' + output);
     }
@@ -24,7 +24,7 @@ export class SbConverter {
         tag = tag.substring(3);
         tag = tag.substring(0, tag.length - 3);
 
-        console.log(tag);
+        // console.log(tag);
 
         if (tag.startsWith('@')) {
             let tagContent = tag.substring(1);
@@ -45,5 +45,14 @@ export class SbConverter {
             return o !== undefined ? o.toString() : 'NULL';
         }
 
+        if (tag.startsWith('#')) {
+            let tagContent = tag.substring(1);
+
+            let o = this.propertyStore.get(tagContent);
+
+            return o !== undefined ? o.toString() : 'NULL';
+        }
+
         return 'NULL';
-    }}
+    }
+}

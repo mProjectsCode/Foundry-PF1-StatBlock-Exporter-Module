@@ -1,9 +1,17 @@
-import {TotalHdProperty} from "./TotalHdProperty.js";
+import {TotalHdProperty} from './TotalHdProperty.js';
+import {ClassProperty} from './ClassProperty.js';
+import {HealthProperty} from './HealthProperty.js';
+import {HdSizeProperty} from './HdSizeProperty.js';
+import {ConHpBonusProperty} from './ConHpBonusProperty.js';
 
 export class PropertyStore {
     static ComputedProperties = {
         'totalHd': new TotalHdProperty(),
-    }
+        'health': new HealthProperty(),
+        'hdSize': new HdSizeProperty(),
+        'conHpBonus': new ConHpBonusProperty(),
+        'class': new ClassProperty(),
+    };
 
     constructor(input) {
         this.properties = {};
@@ -32,7 +40,7 @@ export class PropertyStore {
         return this.properties[property];
     }
 
-    calculateDependencyDepthForTree(){
+    calculateDependencyDepthForTree() {
         for (const [key, computedProperty] of Object.entries(PropertyStore.ComputedProperties)) {
             computedProperty.dependencyDepth = -1;
         }
@@ -42,18 +50,18 @@ export class PropertyStore {
         }
 
         let p = PropertyStore.ComputedProperties[Object.keys(PropertyStore.ComputedProperties)[0]];
-        console.log(p);
+        // console.log(p);
         for (const [key, computedProperty] of Object.entries(PropertyStore.ComputedProperties)) {
             if (computedProperty.dependencyDepth > p.dependencyDepth) {
                 p = computedProperty;
             }
         }
 
-        console.log(p);
+        // console.log(p);
         this.updateDependencyDepth(p, p.dependencyDepth);
 
         for (const [key, computedProperty] of Object.entries(PropertyStore.ComputedProperties)) {
-            console.log('Name: ' + computedProperty.constructor.name + ',  depth: ' + computedProperty.dependencyDepth);
+            // console.log('Name: ' + computedProperty.constructor.name + ',  depth: ' + computedProperty.dependencyDepth);
         }
     }
 

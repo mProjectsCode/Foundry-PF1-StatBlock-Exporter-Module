@@ -1,17 +1,15 @@
-import {SbConverter} from "./lib/SbConverter.js";
+import {SbConverter} from './lib/SbConverter.js';
 
-Hooks.once('init', async function() {
+Hooks.once('init', async function () {
     console.log('SBE | init');
 });
 
-Hooks.once('ready', async function() {
+Hooks.once('ready', async function () {
     console.log('SBE | ready');
 });
 
-
 // Add button to Actor Sheet for opening app
 Hooks.on('getActorSheetHeaderButtons', async (sheet, buttons) => {
-    // If this is not a player character sheet, return without adding the button
     buttons.unshift({
         label: 'Export StatBlock',
         class: 'export-sb',
@@ -24,10 +22,6 @@ Hooks.on('getActorSheetHeaderButtons', async (sheet, buttons) => {
             sbConverter.template = await (await fetch('modules/Foundry-PF1-StatBlock-Exporter-Module/resources/templateCharacter.txt')).text();
 
             sbConverter.convert();
-        }
+        },
     });
 });
-
-export class Helper {
-    static
-}
