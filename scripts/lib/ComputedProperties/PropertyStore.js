@@ -7,6 +7,9 @@ import {FeatsProperty} from './FeatsProperty.js';
 import {LanguagesProperty} from './LanguagesProperty.js';
 import {GearProperty} from './GearProperty.js';
 import {SkillsProperty} from './SkillsProperty.js';
+import {MeleeAttacksProperty} from './MeleeAttacksProperty.js';
+import {RangedAttacksProperty} from './RangedAttacksProperty.js';
+import {SpecialAttacksProperty} from './SpecialAttacksProperty.js';
 
 export class PropertyStore {
     static ComputedProperties = {
@@ -19,6 +22,9 @@ export class PropertyStore {
         'languages': new LanguagesProperty(),
         'gear': new GearProperty(),
         'skills': new SkillsProperty(),
+        'meleeAttacks': new MeleeAttacksProperty(),
+        'rangedAttacks': new RangedAttacksProperty(),
+        'specialAttacks': new SpecialAttacksProperty(),
     };
 
     constructor(input) {

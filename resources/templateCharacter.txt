@@ -13,10 +13,10 @@
 
 #### OFFENSE
 **Speed** {{ @rollData.attributes.speed.land.total }} ft., fly {{ @rollData.attributes.speed.fly.total }} ft. ({{ @rollData.attributes.speed.fly.maneuverability }}), swim {{ @rollData.attributes.speed.swim.total }} ft., climb {{ @rollData.attributes.speed.climb.total }} ft., burrow {{ @rollData.attributes.speed.burrow.total }} ft.
-**Melee** {}
-**Ranged** {}
+**Melee** {{ #meleeAttacks }}
+**Ranged** {{ #rangedAttacks }}
 **Space** {}; **Reach** {{ @rollData.range.melee }}
-**Special Attacks** {}
+**Special Attacks** {{ #specialAttacks }}
 **Spell-Like Abilities** {}
 **Spells Known** (CL {}th)
 
