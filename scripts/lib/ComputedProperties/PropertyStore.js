@@ -5,6 +5,8 @@ import {HdSizeProperty} from './HdSizeProperty.js';
 import {ConHpBonusProperty} from './ConHpBonusProperty.js';
 import {FeatsProperty} from './FeatsProperty.js';
 import {LanguagesProperty} from './LanguagesProperty.js';
+import {GearProperty} from './GearProperty.js';
+import {SkillsProperty} from './SkillsProperty.js';
 
 export class PropertyStore {
     static ComputedProperties = {
@@ -15,6 +17,8 @@ export class PropertyStore {
         'class': new ClassProperty(),
         'feats': new FeatsProperty(),
         'languages': new LanguagesProperty(),
+        'gear': new GearProperty(),
+        'skills': new SkillsProperty(),
     };
 
     constructor(input) {
