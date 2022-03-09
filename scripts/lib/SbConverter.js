@@ -17,6 +17,8 @@ export class SbConverter {
         let output = this.template.replace(new RegExp('{{ .*? }}', 'g'), this.replaceTag.bind(this));
 
         console.log('SBE | output: \n' + output);
+
+        return output;
     }
 
     replaceTag(match) {
