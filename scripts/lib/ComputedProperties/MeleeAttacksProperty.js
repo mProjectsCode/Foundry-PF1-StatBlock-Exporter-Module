@@ -11,7 +11,7 @@ export class MeleeAttacksProperty extends ComputedProperty {
 
         for (const [key, value] of items.entries()) {
             if (itemTypes.includes(value?.data?.type)) {
-                console.log(value?.data?.data?.attackType);
+                // console.log(value?.data?.data?.attackType);
                 if (value?.data?.data?.actionType === 'mwak' || value?.data?.data?.attackTyp === 'natural') {
                     attacks.push(`${value.data.name} ${this.getItemAttacks(value.data)} (${this.getItemDamage(value.data)})`);
                 }

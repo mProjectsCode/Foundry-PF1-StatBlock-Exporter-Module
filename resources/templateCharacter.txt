@@ -1,6 +1,6 @@
 ﻿### {{ @data.name }}
 **XP {{ @data.data.details.xp.value }}**
-{{ @rollData.details.alignment }} {{ @rollData.traits.size }} {{ @data.items.0.data.creatureType }}
+{{ @rollData.details.alignment }} {{ @rollData.traits.size }} {{ @race.data.name }}
 **Init** {{ @rollData.attributes.init.total }}; Senses {{ @rollData.traits.senses }}; Perception {{ @rollData.skills.per.mod }};
 **Aura** {}
 
@@ -8,17 +8,17 @@
 **AC** {{ @rollData.attributes.ac.normal.total }}, touch {{ @rollData.attributes.ac.touch.total }}, flat-footed {{ @rollData.attributes.ac.flatFooted.total }}
 **hp** {{ #health }}
 **Fort** {{ @rollData.attributes.savingThrows.fort.total }}, **Ref** {{ @rollData.attributes.savingThrows.ref.total }}, **Will** {{ @rollData.attributes.savingThrows.will.total }}
-**DR** {}; **Immune** {}; **SR** {}
+**DR** {{ @rollData.traits.dr }}; **Immune** {}; **SR** {{ @rollData.attributes.sr.total }}
 **Weaknesses** {}
 
 #### OFFENSE
 **Speed** {{ @rollData.attributes.speed.land.total }} ft., fly {{ @rollData.attributes.speed.fly.total }} ft. ({{ @rollData.attributes.speed.fly.maneuverability }}), swim {{ @rollData.attributes.speed.swim.total }} ft., climb {{ @rollData.attributes.speed.climb.total }} ft., burrow {{ @rollData.attributes.speed.burrow.total }} ft.
 **Melee** {{ #meleeAttacks }}
 **Ranged** {{ #rangedAttacks }}
-**Space** {}; **Reach** {{ @rollData.range.melee }}
+**Space** {} ft.; **Reach** {{ @rollData.range.melee }} ft.
 **Special Attacks** {{ #specialAttacks }}
-**Spell-Like Abilities** {}
-**Spells Known** (CL {}th)
+**Spell-Like Abilities** (CL {{ @rollData.spells.spelllike.cl.total }}th) {{ #spellLikes }}
+**Spells Known** (CL {{ @rollData.spells.primary.cl.total }}th) {{ #primarySpells }}
 
 #### STATISTICS
 **Str** {{ @rollData.abilities.str.value }}, **Dex** {{ @rollData.abilities.dex.value }}, **Con** {{ @rollData.abilities.con.value }}, **Int** {{ @rollData.abilities.int.value }}, **Wis** {{ @rollData.abilities.wis.value }}, **Cha** {{ @rollData.abilities.cha.value }}
