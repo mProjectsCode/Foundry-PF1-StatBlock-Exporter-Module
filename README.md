@@ -12,4 +12,5 @@ Some day it will export a pathfinder character sheet to a human readable statblo
 
 ## Changelog
 Attention this is an alpha release.
+
 https://github.com/mProjectsCode/Foundry-PF1-StatBlock-Exporter-Module/releases/latest/download/module.json
