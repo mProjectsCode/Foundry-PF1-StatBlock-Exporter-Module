@@ -1,5 +1,4 @@
 import {ComputedProperty} from './ComputedProperty.js';
-import {Helpers} from '../Helpers.js';
 
 export class SpellLikesProperty extends ComputedProperty {
 
@@ -10,7 +9,7 @@ export class SpellLikesProperty extends ComputedProperty {
         };
         let ret = [];
         const itemTypes = [
-            'spell'
+            'spell',
         ];
 
         for (const [key, value] of items.entries()) {
@@ -19,6 +18,14 @@ export class SpellLikesProperty extends ComputedProperty {
                     if (value.data.data.atWill) {
                         spells[0].push(`${value.data.name}`);
                     } else {
+                        if (value.data.data.uses.max === undefined) {
+                            if (!spells.hasOwnProperty('???')) {
+                                spells['???'] = [];
+                            }
+                            spells['???']?.push(`${value.data.name}`);
+                            continue;
+                        }
+
                         if (!spells.hasOwnProperty(value.data.data.uses?.max)) {
                             spells[value.data.data.uses?.max] = [];
                         }
@@ -27,6 +34,8 @@ export class SpellLikesProperty extends ComputedProperty {
                 }
             }
         }
+
+        // console.log(spells);
 
         for (const [key, value] of Object.entries(spells)) {
             if (value.length === 0) {
@@ -41,24 +50,10 @@ export class SpellLikesProperty extends ComputedProperty {
             }
             str += value.toString().replaceAll(',', ', ');
 
-            ret.push(str)
+            ret.push(str);
         }
 
         return '\n' + ret.join('\n');
-    }
-
-    getItemDamage(item) {
-        return Handlebars.helpers.itemDamage(item, this.input._rollData);
-    }
-
-    getItemAttacks(item) {
-        const attacks = item.document.attackArray;
-        if (attacks.length === 0) return '';
-        let ret = `${attacks[0] < 0 ? attacks[0] : `+${attacks[0]}`}`
-        for (let i = 1; i < attacks.length; i++) {
-            ret += `/${attacks[i] < 0 ? attacks[i] : `+${attacks[i]}`}`
-        }
-        return ret;
     }
 
     getDependencies() {

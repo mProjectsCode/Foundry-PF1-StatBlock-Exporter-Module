@@ -12,6 +12,7 @@ import {RangedAttacksProperty} from './RangedAttacksProperty.js';
 import {SpecialAttacksProperty} from './SpecialAttacksProperty.js';
 import {PrimarySpellsProperty} from './PrimarySpellsProperty.js';
 import {SpellLikesProperty} from './SpellLikesProperty.js';
+import {SpaceProperty} from './SpaceProperty.js';
 
 export class PropertyStore {
     static ComputedProperties = {
@@ -29,6 +30,7 @@ export class PropertyStore {
         'specialAttacks': new SpecialAttacksProperty(),
         'primarySpells': new PrimarySpellsProperty(),
         'spellLikes': new SpellLikesProperty(),
+        'spaceProperty': new SpaceProperty(),
     };
 
     constructor(input) {

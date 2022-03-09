@@ -18,13 +18,11 @@ Hooks.on('getActorSheetHeaderButtons', async (sheet, buttons) => {
             // Open Config window
             let sbConverter = new SbConverter(sheet.actor);
 
-            // console.log(sheet.actor);
-            //await sbConverter.getTemplate();
+            console.log(sheet.actor);
+
             sbConverter.template = await (await fetch('modules/Foundry-PF1-StatBlock-Exporter-Module/resources/templateCharacter.txt')).text();
-
             const data = sbConverter.convert();
-
-            saveDataToFile(data, 'md', sheet.actor.data.name + '_statblock.md')
+            saveDataToFile(data, 'md', sheet.actor.data.name + '_statblock.md');
         },
     });
 });

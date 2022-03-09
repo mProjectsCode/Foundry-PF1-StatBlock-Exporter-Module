@@ -4,14 +4,14 @@ export class GearProperty extends ComputedProperty {
 
     getProperty() {
         const items = this.input?.items;
-        let gear = []
+        let gear = [];
         const itemTypes = [
             'equipment',
             'weapon',
             'loot',
             'consumable',
-            'container'
-        ]
+            'container',
+        ];
 
         for (const [key, value] of items.entries()) {
             if (itemTypes.includes(value?.data?.type)) {

@@ -4,7 +4,7 @@ export class SkillsProperty extends ComputedProperty {
 
     getProperty() {
         const skills = this.input?._rollData?.skills;
-        let out = []
+        let out = [];
 
         for (const [key, value] of Object.entries(skills)) {
             out.push(this.keyToName(key) + ' ' + this.fancyNumber(value?.mod));

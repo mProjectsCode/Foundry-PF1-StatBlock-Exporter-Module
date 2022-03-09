@@ -15,7 +15,7 @@
 **Speed** {{ @rollData.attributes.speed.land.total }} ft., fly {{ @rollData.attributes.speed.fly.total }} ft. ({{ @rollData.attributes.speed.fly.maneuverability }}), swim {{ @rollData.attributes.speed.swim.total }} ft., climb {{ @rollData.attributes.speed.climb.total }} ft., burrow {{ @rollData.attributes.speed.burrow.total }} ft.
 **Melee** {{ #meleeAttacks }}
 **Ranged** {{ #rangedAttacks }}
-**Space** {} ft.; **Reach** {{ @rollData.range.melee }} ft.
+**Space** {{ #spaceProperty }} ft.; **Reach** {{ @rollData.range.melee }} ft.
 **Special Attacks** {{ #specialAttacks }}
 **Spell-Like Abilities** (CL {{ @rollData.spells.spelllike.cl.total }}th) {{ #spellLikes }}
 **Spells Known** (CL {{ @rollData.spells.primary.cl.total }}th) {{ #primarySpells }}

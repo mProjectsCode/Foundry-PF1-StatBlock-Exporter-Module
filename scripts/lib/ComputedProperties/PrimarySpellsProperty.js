@@ -19,7 +19,7 @@ export class PrimarySpellsProperty extends ComputedProperty {
         };
         let ret = [];
         const itemTypes = [
-            'spell'
+            'spell',
         ];
 
         for (const [key, value] of items.entries()) {
@@ -43,24 +43,10 @@ export class PrimarySpellsProperty extends ComputedProperty {
             }
             str += value.toString().replaceAll(',', ', ');
 
-            ret.push(str)
+            ret.push(str);
         }
 
         return '\n' + ret.join('\n');
-    }
-
-    getItemDamage(item) {
-        return Handlebars.helpers.itemDamage(item, this.input._rollData);
-    }
-
-    getItemAttacks(item) {
-        const attacks = item.document.attackArray;
-        if (attacks.length === 0) return '';
-        let ret = `${attacks[0] < 0 ? attacks[0] : `+${attacks[0]}`}`
-        for (let i = 1; i < attacks.length; i++) {
-            ret += `/${attacks[i] < 0 ? attacks[i] : `+${attacks[i]}`}`
-        }
-        return ret;
     }
 
     getDependencies() {
