@@ -53,7 +53,7 @@ export class SpellLikesProperty extends ComputedProperty {
             ret.push(str);
         }
 
-        return '\n' + ret.join('\n');
+        return ret.length === 0 ? '' : '\n' + ret.join('\n');
     }
 
     getDependencies() {

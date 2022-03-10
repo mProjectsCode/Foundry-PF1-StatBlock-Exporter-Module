@@ -1,6 +1,8 @@
 import {PropertyStore} from './ComputedProperties/PropertyStore.js';
 
 export class SbConverter {
+    static placeholder = 'NULL';
+
     constructor(actor) {
         this.actor = actor;
         this.template = '';
@@ -44,7 +46,7 @@ export class SbConverter {
                 }
             }
 
-            return o !== undefined ? o.toString() : 'NULL';
+            return this.toPlaceholder(o);
         }
 
         if (tag.startsWith('#')) {
@@ -52,9 +54,22 @@ export class SbConverter {
 
             let o = this.propertyStore.get(tagContent);
 
-            return o !== undefined ? o.toString() : 'NULL';
+            return this.toPlaceholder(o);
         }
 
-        return 'NULL';
+        return SbConverter.placeholder;
+    }
+
+    toPlaceholder(o) {
+        if (o === undefined) {
+            return SbConverter.placeholder;
+        }
+        if (o === null) {
+            return SbConverter.placeholder;
+        }
+        if (o === '') {
+            return SbConverter.placeholder;
+        }
+        return o.toString();
     }
 }

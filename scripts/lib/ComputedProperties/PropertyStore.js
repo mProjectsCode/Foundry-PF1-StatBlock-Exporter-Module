@@ -13,6 +13,8 @@ import {SpecialAttacksProperty} from './SpecialAttacksProperty.js';
 import {PrimarySpellsProperty} from './PrimarySpellsProperty.js';
 import {SpellLikesProperty} from './SpellLikesProperty.js';
 import {SpaceProperty} from './SpaceProperty.js';
+import {AlignmentBlockProperty} from './AlignmentBlockProperty.js';
+import {CrProperty} from './CrProperty.js';
 
 export class PropertyStore {
     static ComputedProperties = {
@@ -31,9 +33,15 @@ export class PropertyStore {
         'primarySpells': new PrimarySpellsProperty(),
         'spellLikes': new SpellLikesProperty(),
         'spaceProperty': new SpaceProperty(),
+        'alignmentBlock': new AlignmentBlockProperty(),
+        'cr': new CrProperty(),
     };
 
+    static Instance = undefined;
+
     constructor(input) {
+        PropertyStore.Instance = this;
+
         this.properties = {};
         for (const [key, computedProperty] of Object.entries(PropertyStore.ComputedProperties)) {
             computedProperty.input = input;

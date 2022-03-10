@@ -1,6 +1,6 @@
-﻿### {{ @data.name }}
+﻿### {{ @data.name }} {{ #cr }}
 **XP {{ @data.data.details.xp.value }}**
-{{ @rollData.details.alignment }} {{ @rollData.traits.size }} {{ @race.data.name }}
+{{ #alignmentBlock }}
 **Init** {{ @rollData.attributes.init.total }}; Senses {{ @rollData.traits.senses }}; Perception {{ @rollData.skills.per.mod }};
 **Aura** {}
 
