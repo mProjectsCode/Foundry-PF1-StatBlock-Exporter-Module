@@ -90,6 +90,7 @@ ng med Aasimar
 
 
 **Spells Known** (CL 6th) 
+
 0 (at will) - Detect Magic, Guidance, Read Magic, Stabilize, Resistance
 
 1st (0/day) - Bless, Obscuring Mist, Protection from Evil, Protection from Good, Protection from Law, Protection from Chaos, Color Spray, Barbed Chains, Burning Hands, Cure Light Wounds, Detect Evil, Entangle, Unbreakable Heart
