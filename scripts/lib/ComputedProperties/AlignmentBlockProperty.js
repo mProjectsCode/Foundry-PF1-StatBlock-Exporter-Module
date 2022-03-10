@@ -17,7 +17,7 @@ export class AlignmentBlockProperty extends ComputedProperty {
         size = this.sizeToStr(size);
 
         let subTypes = this.input?.race?.data?.data?.subTypes.join(', ');
-        type = `${this.firstToUpper(type)}${subTypes.length === 0 ? '' : `(${subTypes})`}`;
+        type = `${this.firstToUpper(type)}${subTypes.length === 0 ? '' : ` (${subTypes})`}`;
 
         let a = `${race} ${cla} ${level}`;
         let b = `${alignment} ${size} ${type}`;
