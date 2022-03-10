@@ -4,7 +4,8 @@ export class CrProperty extends ComputedProperty {
 
     getProperty() {
         const cr = this.input?._rollData?.details?.cr?.total?.toString();
-        if (cr === '') {
+
+        if (this.input?.type === 'character') {
             return ' ';
         }
 

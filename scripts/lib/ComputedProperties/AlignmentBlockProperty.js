@@ -4,15 +4,30 @@ import {PropertyStore} from './PropertyStore.js';
 export class AlignmentBlockProperty extends ComputedProperty {
 
     getProperty() {
+        const items = this.input?.items;
+        let classItem = {};
+        let isRacialClass = false;
+
+        let classes = [];
+
+        for (const [key, value] of items.entries()) {
+            if (value?.data?.type === 'class') {
+                classes.push(value.data.name);
+
+                if (value?.data?.data?.classType === 'racial') {
+                    isRacialClass = true;
+                }
+            }
+        }
+
+        let cla = this.firstToUpper(classes.length === 0 ? 'NULL' : classes[0]);
         let race = this.input?.race?.data?.name;
-        let cla = PropertyStore.Instance.properties['class'];
         let level = PropertyStore.Instance.properties['totalHd'];
         let alignment = this.input?._rollData?.details?.alignment;
         let size = this.input?._rollData?.size;
-        let type = this.input?.race?.data?.data?.creatureType;
 
+        let type = this.input?.race?.data?.data?.creatureType;
         race = this.firstToUpper(race);
-        cla = this.firstToUpper(cla);
         alignment = alignment.toUpperCase();
         size = this.sizeToStr(size);
 
@@ -22,7 +37,7 @@ export class AlignmentBlockProperty extends ComputedProperty {
         let a = `${race} ${cla} ${level}`;
         let b = `${alignment} ${size} ${type}`;
 
-        return `${a}\n${b}`;
+        return isRacialClass ? b : `${a}\n${b}`;
     }
 
     firstToUpper(s) {
@@ -47,7 +62,6 @@ export class AlignmentBlockProperty extends ComputedProperty {
 
     getDependencies() {
         return [
-            PropertyStore.ComputedProperties['class'],
             PropertyStore.ComputedProperties['totalHd'],
         ];
     }
