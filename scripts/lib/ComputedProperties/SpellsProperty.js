@@ -44,7 +44,11 @@ export class SpellsProperty extends ComputedProperty {
             if (key === '0') {
                 str += ` (at will) - `;
             } else {
-                str += ` (${this.input?._rollData?.spells[this.spellBookType]?.spells[`spell${key}`]?.value}/day) - `;
+                let spellsPerDay = this.input?._rollData?.spells[this.spellBookType]?.spells[`spell${key}`]?.max;
+                if (spellsPerDay === null) {
+                    spellsPerDay = '???'
+                }
+                str += ` (${spellsPerDay}/day) - `;
             }
             str += value.toString().replaceAll(',', ', ');
 

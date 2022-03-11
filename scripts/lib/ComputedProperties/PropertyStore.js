@@ -15,6 +15,7 @@ import {SpellLikesProperty} from './SpellLikesProperty.js';
 import {SpaceProperty} from './SpaceProperty.js';
 import {AlignmentBlockProperty} from './AlignmentBlockProperty.js';
 import {CrProperty} from './CrProperty.js';
+import {SpecialAbilitiesProperty} from './SpecialAbilitiesProperty.js';
 
 export class PropertyStore {
     static ComputedProperties = {
@@ -37,6 +38,7 @@ export class PropertyStore {
         'spaceProperty': new SpaceProperty(),
         'alignmentBlock': new AlignmentBlockProperty(),
         'cr': new CrProperty(),
+        'specialAbilities': new SpecialAbilitiesProperty(),
     };
 
     static Instance = undefined;

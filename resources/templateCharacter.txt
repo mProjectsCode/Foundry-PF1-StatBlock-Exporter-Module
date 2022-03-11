@@ -35,5 +35,5 @@ PLACEHOLDER
 **Gear** {{ #gear }}
 
 #### Special Abilities
-PLACEHOLDER
+{{ #specialAbilities }}
 
