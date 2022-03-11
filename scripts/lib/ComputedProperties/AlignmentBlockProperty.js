@@ -12,17 +12,22 @@ export class AlignmentBlockProperty extends ComputedProperty {
 
         for (const [key, value] of items.entries()) {
             if (value?.data?.type === 'class') {
-                classes.push(value.data.name);
-
-                if (value?.data?.data?.classType === 'racial') {
-                    isRacialClass = true;
-                }
+                classes.push(value.data);
             }
         }
 
-        let cla = this.firstToUpper(classes.length === 0 ? 'NULL' : classes[0]);
+        //let cla = this.firstToUpper(classes.length === 0 ? 'NULL' : classes[0]);
+        let classesText = classes.length === 0 ? 'NULL' : '';
+        let classesTextArr = [];
+        for (const class1 of classes) {
+            // console.log(class1);
+            if (class1.data.classType !== 'racial') {
+                classesTextArr.push(`${class1.name} ${class1.data.level}`)
+            }
+        }
+        classesText += classesTextArr.join('/')
+
         let race = this.input?.race?.data?.name;
-        let level = PropertyStore.Instance.properties['totalHd'];
         let alignment = this.input?._rollData?.details?.alignment;
         let size = this.input?._rollData?.size;
 
@@ -34,7 +39,7 @@ export class AlignmentBlockProperty extends ComputedProperty {
         let subTypes = this.input?.race?.data?.data?.subTypes.join(', ');
         type = `${this.firstToUpper(type)}${subTypes.length === 0 ? '' : ` (${subTypes})`}`;
 
-        let a = `${race} ${cla} ${level}`;
+        let a = `${race} ${classesText}`;
         let b = `${alignment} ${size} ${type}`;
 
         return isRacialClass ? b : `${a}\n${b}`;

@@ -10,7 +10,7 @@ import {SkillsProperty} from './SkillsProperty.js';
 import {MeleeAttacksProperty} from './MeleeAttacksProperty.js';
 import {RangedAttacksProperty} from './RangedAttacksProperty.js';
 import {SpecialAttacksProperty} from './SpecialAttacksProperty.js';
-import {PrimarySpellsProperty} from './PrimarySpellsProperty.js';
+import {SpellsProperty} from './SpellsProperty.js';
 import {SpellLikesProperty} from './SpellLikesProperty.js';
 import {SpaceProperty} from './SpaceProperty.js';
 import {AlignmentBlockProperty} from './AlignmentBlockProperty.js';
@@ -30,7 +30,9 @@ export class PropertyStore {
         'meleeAttacks': new MeleeAttacksProperty(),
         'rangedAttacks': new RangedAttacksProperty(),
         'specialAttacks': new SpecialAttacksProperty(),
-        'primarySpells': new PrimarySpellsProperty(),
+        'primarySpells': new SpellsProperty('primary'),
+        'secondarySpells': new SpellsProperty('secondary'),
+        'tertiarySpells': new SpellsProperty('tertiary'),
         'spellLikes': new SpellLikesProperty(),
         'spaceProperty': new SpaceProperty(),
         'alignmentBlock': new AlignmentBlockProperty(),

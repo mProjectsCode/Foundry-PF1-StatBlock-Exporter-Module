@@ -1,7 +1,12 @@
 import {ComputedProperty} from './ComputedProperty.js';
 import {Helpers} from '../Helpers.js';
 
-export class PrimarySpellsProperty extends ComputedProperty {
+export class SpellsProperty extends ComputedProperty {
+
+    constructor(spellBookType) {
+        super();
+        this.spellBookType = spellBookType;
+    }
 
     getProperty() {
         const items = this.input?.items;
@@ -24,7 +29,7 @@ export class PrimarySpellsProperty extends ComputedProperty {
 
         for (const [key, value] of items.entries()) {
             if (itemTypes.includes(value?.data?.type)) {
-                if (value.data.data.spellbook === 'primary') {
+                if (value.data.data.spellbook === this.spellBookType) {
                     spells[value.data.data.level].push(`${value.data.name}`);
                 }
             }
@@ -39,7 +44,7 @@ export class PrimarySpellsProperty extends ComputedProperty {
             if (key === '0') {
                 str += ` (at will) - `;
             } else {
-                str += ` (${this.input?._rollData?.spells.primary.spells[`spell${key}`]?.value}/day) - `;
+                str += ` (${this.input?._rollData?.spells[this.spellBookType]?.spells[`spell${key}`]?.value}/day) - `;
             }
             str += value.toString().replaceAll(',', ', ');
 

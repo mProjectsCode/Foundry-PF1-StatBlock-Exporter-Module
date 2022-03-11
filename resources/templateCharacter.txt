@@ -18,7 +18,9 @@
 **Space** {{ #spaceProperty }} ft.; **Reach** {{ @rollData.range.melee }} ft.
 **Special Attacks** {{ #specialAttacks }}
 **Spell-Like Abilities** (CL {{ @rollData.spells.spelllike.cl.total }}th) {{ #spellLikes }}
-**Spells Known** (CL {{ @rollData.spells.primary.cl.total }}th) {{ #primarySpells }}
+**Spells Known Primary** (CL {{ @rollData.spells.primary.cl.total }}th) {{ #primarySpells }}
+**Spells Known Secondary** (CL {{ @rollData.spells.secondary.cl.total }}th) {{ #secondarySpells }}
+**Spells Known Tertiary** (CL {{ @rollData.spells.tertiary.cl.total }}th) {{ #tertiarySpells }}
 
 #### Tactics
 PLACEHOLDER
