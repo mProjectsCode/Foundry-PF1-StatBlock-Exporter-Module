@@ -15,7 +15,6 @@ Hooks.on('getActorSheetHeaderButtons', async (sheet, buttons) => {
         class: 'export-sb',
         icon: 'fas fa-file-export',
         onclick: async () => {
-            // Open Config window
             let sbConverter = new SbConverter(sheet.actor);
 
             console.log(sheet.actor);

@@ -22,10 +22,10 @@ export class AlignmentBlockProperty extends ComputedProperty {
         for (const class1 of classes) {
             // console.log(class1);
             if (class1.data.classType !== 'racial') {
-                classesTextArr.push(`${class1.name} ${class1.data.level}`)
+                classesTextArr.push(`${class1.name} ${class1.data.level}`);
             }
         }
-        classesText += classesTextArr.join('/')
+        classesText += classesTextArr.join('/');
 
         let race = this.input?.race?.data?.name;
         let alignment = this.input?._rollData?.details?.alignment;

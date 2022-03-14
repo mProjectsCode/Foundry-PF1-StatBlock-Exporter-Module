@@ -24,7 +24,16 @@ export class HealthProperty extends ComputedProperty {
             }
         }
 
-        return `${this.input?._rollData?.attributes?.hp?.max} (${classesTextArr.join('+')}${Helpers.fancyNumber(this.propertyStore.get('conHpBonus'))})`;
+        let ret = `${this.input?._rollData?.attributes?.hp?.max} (${classesTextArr.join('+')}${Helpers.fancyNumber(this.propertyStore.get('conHpBonus'))})`;
+        let fastHealing = this.input?._rollData?.traits?.fastHealing?.toLowerCase();
+
+        fastHealing = fastHealing?.replace('fast healing', '').trim();
+
+        if (fastHealing !== '' && fastHealing !== '0') {
+            ret += `; fast healing ${fastHealing}`;
+        }
+
+        return ret;
     }
 
     getDependencies() {
