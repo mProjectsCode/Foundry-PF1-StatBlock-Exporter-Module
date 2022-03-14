@@ -14,40 +14,63 @@ It *works* for NPC and Player character sheets.
 ## This is the current state of the exporter
 *This might not always be up to date with the latest commit/release.*
 ```
-### Eavar (CR 1)
-**XP 0**
-Aasimar Shaman 6
-NG Medium Outsider (Native, Human)
-**Init** 7; Senses Darkvision 60 feet; Perception 15;
+### Adult Bronze Dragon (CR 13)
+**XP 25600**
+LG Huge Dragon (water)
+**Init** 0; Senses dragon senses; Perception +28; Perception 28;
 **Aura** {}
 
 #### DEFENSE
-**AC** 13, touch 11, flat-footed 12
-**hp** 45 (6d8+12)
-**Fort** 4, **Ref** 3, **Will** 9
-**DR** NULL; **Immune** {}; **SR** 0
-**Weaknesses** {}
+**AC** 28, touch 8, flat-footed 28
+**hp** 184 (16d12+68); fast healing 5
+**Fort** 15, **Ref** 10, **Will** 15
+**DR** 5/magic; **Immune** electric, paralyze, sleep; **Resist** NULL; **SR** 24
+**Weaknesses** fire
 
 #### OFFENSE
-**Speed** 30 ft., fly 0 ft. (average), swim 0 ft., climb 0 ft., burrow 0 ft.
-**Melee** Dagger +2 (1d4-2)
+**Speed** 40 ft., fly 200 ft. (poor), swim 60 ft., climb 0 ft., burrow 0 ft.
+**Melee** Bite +22 (2d8+4+8), Claws +22/+22 (2d6+0+8), Wings +20/+20 (1d8+1+8), Tail Slap +20 (2d6+9+8)
 **Ranged** NULL
-**Space** 5 ft.; **Reach** 5 ft.
-**Special Attacks** NULL
-**Spell-Like Abilities** (CL 6th) NULL
-**Spells Known** (CL 6th) 
-0 (at will) - Detect Magic, Guidance, Read Magic, Stabilize, Resistance
-1st (0/day) - Bless, Obscuring Mist, Protection from Evil, Protection from Good, Protection from Law, Protection from Chaos, Color Spray, Barbed Chains, Burning Hands, Cure Light Wounds, Detect Evil, Entangle, Unbreakable Heart
-2nd (0/day) - Barkskin, Restoration,  Lesser, Spiritual Weapon, False Life, Owl's Wisdom, Hold Person, Shared Sacrifice, Life Pact, Sickening Entanglement, Resist Energy
-3rd (0/day) - Nauseating Trail, Call Lightning, Bestow Curse, Clairaudience/Clairvoyance, Dispel Magic, Fly, Font of Spirit Magic, Magic Circle against Evil, Magic Vestment, Sleet Storm, Stinking Cloud, Stone Shape, Trial of Fire and Acid, Wind Wall, Remove Curse, Remove Disease, Fireball (via Flame Spirit)
+**Space** 15 ft.; **Reach** 15 ft.
+**Special Attacks** Special Attack: Crush +14 (null), Special Attack: Repulsion Breath +14 (null), Special Attack: Breath Weapon (100-ft. Line,  DC 23,  12d6 Electricity) +14 (null)
+**Spell-Like Abilities** (CL 16th) 
+at will - Fog Cloud, Speak with Animals
+???/day - Create Food and Water
+**Spells Known Primary** (CL 7th) 
+0 (at will) - Detect Magic, Light, Message, Resistance, 2 More
+1st (5/day) - Alarm, Mage Armor, Obscuring Mist, Shield, True Strike
+2nd (0/day) - Blur, Gust of Wind, Mirror Image
+3rd (0/day) - Dispel Magic, Slow
+**Spells Known Secondary** (CL 0th) NULL
+**Spells Known Tertiary** (CL 0th) NULL
+
+#### Tactics
+PLACEHOLDER
 
 #### STATISTICS
-**Str** 7, **Dex** 13, **Con** 14, **Int** 10, **Wis** 16, **Cha** 12
-**Base Atk** 4; **CMB** 2; **CMD** 13
-**Feats** Divine Protection, Improved Initiative, Sacred Geometry, Extend Spell (Metamagic) SG, Maximize Spell (Metamagic) SG
-**Skills** Acrobatics +1, Appraise +0, Artistry +0, Bluff +2, Climb -2, Craft +0, Diplomacy +13, Disable Device +1, Disguise +2, Escape Artist +1, Fly +8, Handle Animal +6, Heal +4, Intimidate +2, Knowledge Arcana +3, Knowledge Dungeoneering +0, Knowledge Engineering +6, Knowledge Geography +1, Knowledge History +1, Knowledge Local +0, Knowledge Nature +6, Knowledge Nobility +1, Knowledge Planes +0, Knowledge Religion +5, Linguistics +2, Lore +0, Perception +15, Perform +2, Profession +4, Ride +1, Sense Motive +4, Sleight of Hand +1, Spellcraft +8, Stealth +1, Survival +4, Swim -2, Use Magic Device +2
-**Languages** celestial, common
-**Gear** Leather Armor, Kette mit religiösem Symbol, Dagger, Tome of Strahd
+**Str** 27, **Dex** 10, **Con** 21, **Int** 20, **Wis** 21, **Cha** 20
+**Base Atk** 16; **CMB** 26; **CMD** 36
+**Feats** Alertness, Cleave, Flyby Attack, Hover, Improved Vital Strike, Multiattack, Power Attack, Vital Strike
+**Skills** Acrobatics +0, Appraise +5, Artistry +5, Bluff +5, Climb +8, Craft +5, Diplomacy +24, Disable Device +0, Disguise +5, Escape Artist +0, Fly +11, Handle Animal +5, Heal +5, Intimidate +24, Knowledge Arcana +24, Knowledge Dungeoneering +5, Knowledge Engineering +5, Knowledge Geography +24, Knowledge History +5, Knowledge Local +5, Knowledge Nature +5, Knowledge Nobility +5, Knowledge Planes +5, Knowledge Religion +5, Linguistics +5, Lore +5, Perception +28, Perform +5, Profession +5, Ride +0, Sense Motive +28, Sleight of Hand +0, Spellcraft +24, Stealth +11, Survival +5, Swim +35, Use Magic Device +5, undefined +21
+**Languages** aquan, common, draconic, elven, gnome
+**SQ** {}
+**Gear** NULL
+
+#### Special Abilities
+Sense: Dragon Senses (Ex)
+Aura: Frightful Presence
+Special Quality: Change Shape
+Special Quality: Water Breathing
+Special Quality: Wave Mastery
+Ecology
+Change Shape (Su)
+Electricity Aura (Su)
+Repulsion Breath (Su)
+Spell-Like Abilities (Sp)
+Tidal Wave (Su)
+Vortex (Ex)
+Water Breathing (Ex)
+Wave Mastery (Su)
 ```
 
 ## Changelog
