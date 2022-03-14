@@ -46,7 +46,7 @@ export class SpellsProperty extends ComputedProperty {
             } else {
                 let spellsPerDay = this.input?._rollData?.spells[this.spellBookType]?.spells[`spell${key}`]?.max;
                 if (spellsPerDay === null) {
-                    spellsPerDay = '???';
+                    spellsPerDay = '0';
                 }
                 str += ` (${spellsPerDay}/day) - `;
             }

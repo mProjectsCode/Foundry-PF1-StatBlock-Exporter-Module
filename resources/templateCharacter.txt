@@ -8,8 +8,8 @@
 **AC** {{ @rollData.attributes.ac.normal.total }}, touch {{ @rollData.attributes.ac.touch.total }}, flat-footed {{ @rollData.attributes.ac.flatFooted.total }}
 **hp** {{ #health }}
 **Fort** {{ @rollData.attributes.savingThrows.fort.total }}, **Ref** {{ @rollData.attributes.savingThrows.ref.total }}, **Will** {{ @rollData.attributes.savingThrows.will.total }}
-**DR** {{ @rollData.traits.dr }}; **Immune** {}; **Resist** {{ @rollData.traits.eres }}; **SR** {{ @rollData.attributes.sr.total }}
-**Weaknesses** {}
+**DR** {{ @rollData.traits.dr }}; **Immune** {{ #immunities }}; **Resist** {{ @rollData.traits.eres }}; **SR** {{ @rollData.attributes.sr.total }}
+**Weaknesses** {{ #dv }}
 
 #### OFFENSE
 **Speed** {{ @rollData.attributes.speed.land.total }} ft., fly {{ @rollData.attributes.speed.fly.total }} ft. ({{ @rollData.attributes.speed.fly.maneuverability }}), swim {{ @rollData.attributes.speed.swim.total }} ft., climb {{ @rollData.attributes.speed.climb.total }} ft., burrow {{ @rollData.attributes.speed.burrow.total }} ft.

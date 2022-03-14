@@ -6,7 +6,7 @@ export class AlignmentBlockProperty extends ComputedProperty {
     getProperty() {
         const items = this.input?.items;
         let classItem = {};
-        let isRacialClass = false;
+        let isRacialClass = true;
 
         let classes = [];
 
@@ -21,8 +21,9 @@ export class AlignmentBlockProperty extends ComputedProperty {
         let classesTextArr = [];
         for (const class1 of classes) {
             // console.log(class1);
-            if (class1.data.classType !== 'racial') {
-                classesTextArr.push(`${class1.name} ${class1.data.level}`);
+            if (class1?.data?.classType !== 'racial') {
+                classesTextArr.push(`${class1?.name} ${class1?.data?.level}`);
+                isRacialClass = false;
             }
         }
         classesText += classesTextArr.join('/');

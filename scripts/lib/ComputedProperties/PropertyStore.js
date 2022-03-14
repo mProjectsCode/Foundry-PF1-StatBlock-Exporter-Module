@@ -16,6 +16,8 @@ import {SpaceProperty} from './SpaceProperty.js';
 import {AlignmentBlockProperty} from './AlignmentBlockProperty.js';
 import {CrProperty} from './CrProperty.js';
 import {SpecialAbilitiesProperty} from './SpecialAbilitiesProperty.js';
+import {ImmunitiesProperty} from './ImmunitiesProperty.js';
+import {DvProperty} from './DvProperty.js';
 
 export class PropertyStore {
     static ComputedProperties = {
@@ -39,6 +41,8 @@ export class PropertyStore {
         'alignmentBlock': new AlignmentBlockProperty(),
         'cr': new CrProperty(),
         'specialAbilities': new SpecialAbilitiesProperty(),
+        'immunities': new ImmunitiesProperty(),
+        'dv': new DvProperty(),
     };
 
     static Instance = undefined;
