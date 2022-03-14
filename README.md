@@ -16,7 +16,6 @@ It *works* for NPC and Player character sheets.
 ```
 ### Adult Bronze Dragon (CR 13)
 **XP 25600**
-Dragon 
 LG Huge Dragon (water)
 **Init** 0; Senses dragon senses; Perception +28; Perception 28;
 **Aura** {}
