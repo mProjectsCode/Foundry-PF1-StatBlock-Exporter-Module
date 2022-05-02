@@ -1,5 +1,5 @@
 import {ComputedProperty} from './ComputedProperty.js';
-import {PropertyStore} from './PropertyStore.js';
+import {PropertyStore} from '../PropertyStore.js';
 
 export class AlignmentBlockProperty extends ComputedProperty {
 

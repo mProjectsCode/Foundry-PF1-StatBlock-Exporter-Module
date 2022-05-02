@@ -1,4 +1,4 @@
-import {PropertyStore} from './ComputedProperties/PropertyStore.js';
+import {PropertyStore} from './PropertyStore.js';
 
 export class SbConverter {
     static placeholder = 'NULL';

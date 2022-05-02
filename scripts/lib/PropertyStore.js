@@ -1,23 +1,23 @@
-import {TotalHdProperty} from './TotalHdProperty.js';
-import {ClassProperty} from './ClassProperty.js';
-import {HealthProperty} from './HealthProperty.js';
-import {HdSizeProperty} from './HdSizeProperty.js';
-import {ConHpBonusProperty} from './ConHpBonusProperty.js';
-import {FeatsProperty} from './FeatsProperty.js';
-import {LanguagesProperty} from './LanguagesProperty.js';
-import {GearProperty} from './GearProperty.js';
-import {SkillsProperty} from './SkillsProperty.js';
-import {MeleeAttacksProperty} from './MeleeAttacksProperty.js';
-import {RangedAttacksProperty} from './RangedAttacksProperty.js';
-import {SpecialAttacksProperty} from './SpecialAttacksProperty.js';
-import {SpellsProperty} from './SpellsProperty.js';
-import {SpellLikesProperty} from './SpellLikesProperty.js';
-import {SpaceProperty} from './SpaceProperty.js';
-import {AlignmentBlockProperty} from './AlignmentBlockProperty.js';
-import {CrProperty} from './CrProperty.js';
-import {SpecialAbilitiesProperty} from './SpecialAbilitiesProperty.js';
-import {ImmunitiesProperty} from './ImmunitiesProperty.js';
-import {DvProperty} from './DvProperty.js';
+import {TotalHdProperty} from './ComputedProperties/TotalHdProperty.js';
+import {ClassProperty} from './ComputedProperties/ClassProperty.js';
+import {HealthProperty} from './ComputedProperties/HealthProperty.js';
+import {HdSizeProperty} from './ComputedProperties/HdSizeProperty.js';
+import {ConHpBonusProperty} from './ComputedProperties/ConHpBonusProperty.js';
+import {FeatsProperty} from './ComputedProperties/FeatsProperty.js';
+import {LanguagesProperty} from './ComputedProperties/LanguagesProperty.js';
+import {GearProperty} from './ComputedProperties/GearProperty.js';
+import {SkillsProperty} from './ComputedProperties/SkillsProperty.js';
+import {MeleeAttacksProperty} from './ComputedProperties/MeleeAttacksProperty.js';
+import {RangedAttacksProperty} from './ComputedProperties/RangedAttacksProperty.js';
+import {SpecialAttacksProperty} from './ComputedProperties/SpecialAttacksProperty.js';
+import {SpellsProperty} from './ComputedProperties/SpellsProperty.js';
+import {SpellLikesProperty} from './ComputedProperties/SpellLikesProperty.js';
+import {SpaceProperty} from './ComputedProperties/SpaceProperty.js';
+import {AlignmentBlockProperty} from './ComputedProperties/AlignmentBlockProperty.js';
+import {CrProperty} from './ComputedProperties/CrProperty.js';
+import {SpecialAbilitiesProperty} from './ComputedProperties/SpecialAbilitiesProperty.js';
+import {ImmunitiesProperty} from './ComputedProperties/ImmunitiesProperty.js';
+import {DvProperty} from './ComputedProperties/DvProperty.js';
 
 export class PropertyStore {
     static ComputedProperties = {
@@ -66,7 +66,11 @@ export class PropertyStore {
         // console.log(sortedProperties);
 
         for (const sortedProperty of sortedProperties) {
-            this.properties[sortedProperty[0]] = sortedProperty[1].getProperty();
+            try {
+                this.properties[sortedProperty[0]] = sortedProperty[1].getProperty();
+            } catch (e) {
+                this.properties[sortedProperty[0]] = undefined;
+            }
         }
 
         console.log(this.properties);
@@ -85,6 +89,7 @@ export class PropertyStore {
             this.calculateDependencyDepth(computedProperty, 0);
         }
 
+        /*
         let p = PropertyStore.ComputedProperties[Object.keys(PropertyStore.ComputedProperties)[0]];
         // console.log(p);
         for (const [key, computedProperty] of Object.entries(PropertyStore.ComputedProperties)) {
@@ -96,6 +101,7 @@ export class PropertyStore {
         // console.log(p);
         this.updateDependencyDepth(p, p.dependencyDepth);
 
+        */
         for (const [key, computedProperty] of Object.entries(PropertyStore.ComputedProperties)) {
             // console.log('Name: ' + computedProperty.constructor.name + ',  depth: ' + computedProperty.dependencyDepth);
         }
@@ -129,6 +135,4 @@ export class PropertyStore {
             this.updateDependencyDepth(dependency, depth - 1);
         }
     }
-
-
 }

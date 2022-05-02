@@ -1,5 +1,5 @@
 import {ComputedProperty} from './ComputedProperty.js';
-import {PropertyStore} from './PropertyStore.js';
+import {PropertyStore} from '../PropertyStore.js';
 import {Helpers} from '../Helpers.js';
 
 export class HealthProperty extends ComputedProperty {
